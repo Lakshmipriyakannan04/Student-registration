@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="banner.jpg" alt="Website Banner">
+    </header>
+    <div class="container">
+        <h1>Student Registration</h1>
+        <form id="registrationForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const registrationForm = document.getElementById("registrationForm");
+
+    registrationForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get user input
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const course = document.getElementById("course").value;
+
+        // Perform registration logic here (e.g., send data to the server)
+
+        alert("Registration successful!");
+        registrationForm.reset(); // Clear the form
+    });
+});
